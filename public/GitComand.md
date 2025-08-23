@@ -1,87 +1,108 @@
-Шпаргалка базових команд Git:
+Шпаргалка базових команд Git
 Налаштування користувача
-
-
-• 	git config --global user.name "Ваше Ім’я"
-• 	git config --global user.email "ваш.email@example.com"
-• 	git config --global core.editor "code --wait"  (редактор для повідомлень комітів)
+- git config --global user.name "Ваше Ім’я"
+- git config --global user.email "ваш.email@example.com"
+- git config --global core.editor "code --wait"  (редактор для повідомлень комітів)
 Ініціалізація та клонування
-• 	git init
+- git init
 створює новий Git-репозиторій у поточній папці
-• 	git clone <url>
+- git clone <url>
 копіює існуючий віддалений репозиторій локально
-
-
-
 Відстеження змін
-
-
-
-• 	git status
+- git status
 показує змінені, нові та видалені файли
-• 	git add <file>
+- git add <file>
 додає файл до індексу (staging area)
-• 	git add .
+- git add .
 додає всі змінені/нові файли
-• 	git diff
+- git diff
 показує відмінності між робочою копією та індексом
 Фіксація змін
-• 	git commit -m "повідомлення"
+- git commit -m "повідомлення"
 створює коміт із індексованих файлів
-• 	git commit
+- git commit
 відкриває редактор для введення повідомлення коміту
 Перегляд історії
-• 	git log
+- git log
 базовий список комітів
-• 	git log --oneline --graph --decorate --all
+- git log --oneline --graph --decorate --all
 компактний і наочний граф змін
 
-
 Робота з гілками
-
-
-• 	git branch
+- git branch
 перелік локальних гілок
-• 	git branch <назва>
+- git branch <назва>
 створює нову гілку
-• 	git checkout <назва>
+- git checkout <назва>
 перемикається на існуючу гілку
-• 	git checkout -b <назва>
+- git checkout -b <назва>
 створює й одразу переходить на гілку
-• 	git merge <гілка>
+- git checkout -
+повертається на попередню гілку
+- git branch -M <нова-назва>
+перейменовує поточну гілку
+- git merge <гілка>
 зливає в поточну гілку вказану
 Віддалений репозиторій
-• 	git remote -v
+- git remote -v
 показує налаштовані віддалені репозиторії
-• 	git remote add origin <url>
+- git remote add origin <url>
 додає віддалений репозиторій під псевдонімом origin
-• 	git push -u origin <гілка>
+- git push -u origin <гілка>
 відправляє коміти й встановлює upstream
-• 	git push
+- git push
 відправляє нові коміти в налаштований upstream
-• 	git pull
-отримує зміни та зливає їх з поточною гілкою
-• 	git fetch
+- git fetch
 отримує нові коміти без автоматичного злиття
+- git pull
+отримує зміни та зливає їх з поточною гілкою
 
 Виправлення й відкат
-
-• 	git restore <file>
+- git restore <file>
 скасовує незакомічені зміни в файлі
-• 	git restore .
+- git restore .
 скасовує всі незакомічені зміни
-• 	git reset <file>
+- git reset <file>
 прибирає файл з індексу, залишаючи зміни в робочій копії
-• 	git reset --hard <commit>
-повертає весь репозиторій до стану вказаного коміту (усі незбережені зміни губляться)
-• 	git revert <commit>
+- git reset --hard <commit>
+повертає весь репозиторій до стану вказаного коміту (втрачаються всі незбережені зміни)
+- git revert <commit>
 створює новий коміт, який відміняє зміни з вказаного коміту
 Тимчасове збереження (stash)
-• 	git stash
+- git stash
 зберігає поточні незакомічені зміни й очищає робочу копію
-• 	git stash list
+- git stash list
 показує список схованих змін
-• 	git stash apply
+- git stash apply
 застосовує останній stash, залишаючи його в списку
-• 	git stash drop
+- git stash drop
 видаляє останній stash зі списку
+
+Команди, які ти використовував у сесії
+Ініціалізація та гілки
+- git init
+- git checkout -b user
+- git checkout main
+- git checkout -
+- git branch
+- git branch -M main
+Додавання та коміти
+- git add
+- git add .
+- git commit -m "learn command"
+- git commit -m "add +++ to p"
+Віддалений репозиторій
+- git remote add origin https://github.com/SumuilDD/vite-site.git
+- git push -u origin main
+- git push -u origin user
+- git push
+Перегляд статусу
+- git status
+
+Додаткові поради
+- Створіть файл .gitignore для виключення з-під контролю тек node_modules/, середовища .env, збірок із dist/ тощо.
+- Пишіть зрозумілі повідомлення комітів: що і навіщо змінено.
+- Використовуйте короткі гілки для фіч і багфіксів, а після злиття видаляйте застарілі гілки.
+- Перед пушем завжди перевіряйте git status і git log --oneline для впевненості, що публікуєте саме те, що планували.
+
+
