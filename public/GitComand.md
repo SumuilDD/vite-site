@@ -115,4 +115,6 @@ npm i sass -D
 npm install -g npm@11.5.2
 
 
- npm run dev
+ npm run dev    #запуск
+ o     //браузер
+ctrl+c   //вийти з режиму

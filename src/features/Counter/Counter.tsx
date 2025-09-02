@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Counter.module.scss";
-import { Button } from "D:/робота/FRONTEND/vite-site/src/shared/ui/Button/Button";
+import { Button } from "../../shared/ui/Button/Button";
 
 export const Counter = () => {
   const [count, setCount] = useState(0);
