@@ -113,3 +113,6 @@ npm i sass -D
 
 # Оновити npm до певної версії глобально
 npm install -g npm@11.5.2
+
+
+ npm run dev
